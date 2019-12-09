@@ -1,6 +1,6 @@
   
 # Precision Medicine with an emphasize in  Pharmacogenomics 
-
+#### Group 10: Karen William Kinsey Van-Deynze Steve Zhang
 ### Overview:
 #### 1. [Introduction to Precision Medicine](#1) 
 #### 2. [A Brief History on Pharmacogenetics & Pharmacogenomics.](#2)
