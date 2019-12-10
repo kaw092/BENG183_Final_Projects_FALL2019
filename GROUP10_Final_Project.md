@@ -29,13 +29,14 @@ These findings were the building blocks of what we know today as Pharmacogenomic
 
 Combining drugs allows them to accomplish what one alone cannot, enabling treatment of aggressive diseases such as cancer from multiple angles. These drugs tend to be more selective, with a limited scope, granting more precise action and lessened side effects. Incorporating selective medicines forms a medicinal team capable of launching several accurate defenses at multiple areas. However, careless combination can lead drugs to counter each other’s effects, a quality known as antagonism.
  
- A group led by Ke-Jia Xu pioneered the creation of a drug network. The network and corresponding formula predicts synergistic drugs and thus saves time otherwise wasted on testing combinations by brute force. Drug network construction is an efficient method where drugs are represented as nodes and connected by edges with widths proportional to their ability to complement one another also known as therapeutic similarity. The following equation depicts how the drug network is constructed. 
+ A group led by Ke-Jia Xu pioneered the creation of a drug network.[6] The network and corresponding formula predicts synergistic drugs and thus saves time otherwise wasted on testing combinations by brute force. Drug network construction is an efficient method where drugs are represented as nodes and connected by edges with widths proportional to their ability to complement one another also known as therapeutic similarity. The following equation depicts how the drug network is constructed. 
  
 ![equation](eq2.PNG)</br>
 > Figure 2: Equation for Drug network Construction </br> 
 > * N is the number of drugs in the network</br>
 > * n1 & n2 are the partners of drugs 1 and 2</br>
 > * m is the number of chemicals they have in common with each other </br>
+</br> 
 
 ![drug_network](https://i.imgur.com/TSMWvAu.jpg)</br>
 > Figure 3: Drug Network.Drugs not connected by edges would create useless, if not harmful combinations.The closer this value is to 0, the likelier the chance a useful combo has been found, which will form an edge between these drug nodes.</br>
@@ -64,7 +65,7 @@ One drawback to the network is that, while they identify complementary combos, t
  
 #### Method 2: Freshly-Made Compounded Medicine (Falconer) 
 
-In some cases, patients lack the time needed for analysts to finish constructing their graphs and verifying their results via clinical trials therefore leading to different methodologies with varying difficulty to produce medicine on demand. For instance, the simplest method is simply crushing the solid form of a medicine and mixing it into water. 
+In some cases, patients lack the time needed for analysts to finish constructing their graphs and verifying their results via clinical trials therefore leading to different methodologies with varying difficulty to produce medicine on demand.[7] For instance, the simplest method is simply crushing the solid form of a medicine and mixing it into water. 
 
 The liquid counterpart proves to be more amenable to those afflicted with dysphagia, a condition that impedes swallowing. Researchers may ascertain this condition’s presence by scanning for substitutions of Valine to Methionine due to polymorphism of rs2565 of the BDNF gene, a gene heavily involved the esophageal motor functions. Said polymorphism was discovered via transcranial magnetic stimulation which correlated with the SNPs locating the substitutions. However, some medicinal ingredients are insoluble, and attempts to mix them may create solid deposits that threaten to choke the drinker. Inactive excipients, components that accompany but have no effect on the drug’s active ingredients’ efficacy, can be incorporated to increase solubility.
 
@@ -72,15 +73,15 @@ There are downsides to this approach since the distribution of these remedies ha
 
 However these downsides don’t brand this method as irredeemably bad since most of its products, which range from ointments to suppositories, are advised and designed for consumption moments after production, denying time that may otherwise be spent to degrade or contaminate the medicine. 
 
-### Part 4. Applications of Bioinformatic tools:RNASeq<a name="4"></a>
+### Part 4. Applications of Bioinformatic tools<a name="4"></a> 
 
 #### Identifying genetic factors excluding people from conventional medicine
 
 The presence of an abnormal gene can lead to a line of descendants exhibiting sensitivity towards drugs that are otherwise beneficial to those bearing the same illness. The naive way, is to commission a control and treatment group so that sensitivity can be evaluated. However, it is not only a costly procedure but also unethical in cases where the illness necessitates drastic treatments like chemotherapy, which harms both healthy and ill individuals alike.
 
-Instead, researchers utilized subjects who provided consent as well as a completed a survey to provide biographical information latter used to present phenotypic classification for the data. The subjects also provided saliva samples that were used to gather data about single nucleotide polymorphisms(SNPs). Through this, genome-wide association studies(GWAS) were able to analyze each class’s SNPs. The latter proves useful for GWAS that will analyze each class’s SNPs. The data from these GWAS can be subjected through association tests with logical regression that’ll produce a p-value determining significance. Small p values indicated that these patients are inheritors of unique markers or conditions that affect their ability to get regular medicine(Qs Li). The presence of these unique markers inform medical providers to select a more precise treatment for patients. 
+Instead, researchers utilized subjects who provided consent as well as a completed a survey to provide biographical information latter used to present phenotypic classification for the data. The subjects also provided saliva samples that were used to gather data about single nucleotide polymorphisms(SNPs). Through this, genome-wide association studies(GWAS) were able to analyze each class’s SNPs. The latter proves useful for GWAS that will analyze each class’s SNPs. The data from these GWAS can be subjected through association tests with logical regression that’ll produce a p-value determining significance. Small p values indicated that these patients are inheritors of unique markers or conditions that affect their ability to get regular medicine[4]. The presence of these unique markers inform medical providers to select a more precise treatment for patients. 
 
-Another example of genome-wide studies revealing problematic SNPs is a study by the SEARCH study collaborative group, who discovered that the rs4363657 SNP brought muscular degeneration to those who consumed statins, a drug known to treat hypertension. The group extracted DNA from their subjects and stained them so they’d fluoresce, amplified them with gel electrophoresis, and elongated them with PCR. Using a BeadChip to collect SNPs, they initiated single-SNP analysis and outed the troublesome polymorphism (SEARCH).
+Another example of genome-wide studies revealing problematic SNPs is a study by the SEARCH study collaborative group, who discovered that the rs4363657 SNP brought muscular degeneration to those who consumed statins, a drug known to treat hypertension. The group extracted DNA from their subjects and stained them so they’d fluoresce, amplified them with gel electrophoresis, and elongated them with PCR. Using a BeadChip to collect SNPs, they initiated single-SNP analysis and outed the troublesome polymorphism (SEARCH).[5]
 
 #### Connecting RNA-Seq
 
@@ -124,9 +125,9 @@ The genes identified as sensitive to a given drug were then separated into genes
 ![lasteq](lastpic.PNG)</br>
 > Figure 6: Heatmap of row Z-scores of gene expression of DRA genes idetified for 17-AAG treated cancer cells across 323 cell lines. Rows indicate genes, columns indicate sample. Red represents high gene expression, blue represents low gene expression. Side bar at top represents sensitivity of the sample to the 17-AAG with dark green for low values and yellow for high values.
 
-As seen above, hierarchical clustering was performed with a Euclidean distance metric on both samples and genes. The clustering reveals that there are 2 main groups of genes based on their expression values: genes with relatively low sensitivity to the drug deemed “non-sensitive group” and genes with relatively high sensitivity to the drug deemed “sensitive group”. The clustering of “non-sensitive” and “sensitive” groups was seen across all 14 drugs. A student t-test was run between these groups across all drugs and all p-values were found to be less than 2.0 × 10^−7.
+As seen above, hierarchical clustering was performed with a Euclidean distance metric on both samples and genes. The clustering reveals that there are 2 main groups of genes based on their expression values: genes with relatively low sensitivity to the drug deemed “non-sensitive group” and genes with relatively high sensitivity to the drug deemed “sensitive group”. The clustering of “non-sensitive” and “sensitive” groups was seen across all 14 drugs. A student t-test was run between these groups across all drugs and all p-values were found to be less than 2.0 × 10^−7.[3]
 
-Hence, the study demonstrates a correlation between the gene expression of DRA genes and drug sensitivity allowing a different approach to construct drugs that better pinpoints drug targets through analysis of  transcriptome data. Further, the study continues by analyzing the same expression profiles per groups believed to influence drug response such as gender and age supplying researchers the ability to distinguish which genes are more sensitive to specific drugs  for a given subpopulation. It has provided a more calculated advance in drug production by taking into account the genomic aspect of the population. Moving forward, precision medicine is becoming a reality since drugs can be developed for specific subpopulations given their molecular drug response. 
+Hence, the study demonstrates a correlation between the gene expression of DRA genes and drug sensitivity allowing a different approach to construct drugs that better pinpoints drug targets through analysis of  transcriptome data. Further, the study continues by analyzing the same expression profiles per groups believed to influence drug response such as gender and age supplying researchers the ability to distinguish which genes are more sensitive to specific drugs  for a given subpopulation.[3] It has provided a more calculated advance in drug production by taking into account the genomic aspect of the population. Moving forward, precision medicine is becoming a reality since drugs can be developed for specific subpopulations given their molecular drug response.
 
 ### Part 5: References <a name="6"></a>
 
