@@ -14,9 +14,9 @@
 >According to NIH,Precision medicine is “an emerging approach for disease treatment and prevention that takes into account individual variability in genes, environment, and lifestyle for each person.”[1]  
 
   That is to say, precision medicine is a specific form of therapeutics tailored for each subpopulation of patients through the use of tools such as pharmacogenomics; an offspring of pharmacogenetics. Precision medicine aims to customize health care so that each treatment is tailored for every subpopulation in every possible way. Our main focus is pharmacogenomics with emphasis on genomic approaches. 
-An overall layout of the procedure is seen below </br>
-![pm](pm.PNG)</br>
 
+![pm](pm.PNG)</br>
+>Figure 1: An overall layout of the precision medicine workflow </br>
 ### Part 2: A Brief History on Pharmacogenetics & Pharmacogenomics<a name="2"></a>
 
 To be able to understand how pharmacogenomics came to be, we must first introduce Pharmacogenetics, a science that was recognized in the late 1950s which was dependent on “ the occurrence of unusual reactions to drugs on the basis of biochemical individuality.”[1]Revolving around studies that focus on “many different genetic changes of the enzyme that altered its functional characteristics”.[2] It later became clear that drug effects differentiate not only between populations, genders, and races but also between individuals. Drug metabolism also differs between individuals due to polymorphisms in drug-metabolizing enzymes leading to variability in the effectiveness of drugs. For example, some metabolizers may absorb more of a specific drug than others across individuals, leading some of the drugs as well as some doses to be ineffective or inefficient to specific individuals. 
@@ -32,14 +32,13 @@ Combining drugs allows them to accomplish what one alone cannot, enabling treatm
  A group led by Ke-Jia Xu pioneered the creation of a drug network. The network and corresponding formula predicts synergistic drugs and thus saves time otherwise wasted on testing combinations by brute force. Drug network construction is an efficient method where drugs are represented as nodes and connected by edges with widths proportional to their ability to complement one another also known as therapeutic similarity. The following equation depicts how the drug network is constructed. 
  
 ![equation](eq2.PNG)</br>
-* N is the number of drugs in the network</br>
-* n1 & n2 are the partners of drugs 1 and 2</br>
-* m is the number of chemicals they have in common with each other</br>
-
-Drugs not connected by edges would create useless, if not harmful combinations</br>
-The closer this value is to 0, the likelier the chance a useful combo has been found, which will form an edge between these drug nodes.</br>
+> Figure 2: Equation for Drug network Construction </br> 
+> * N is the number of drugs in the network</br>
+> * n1 & n2 are the partners of drugs 1 and 2</br>
+> * m is the number of chemicals they have in common with each other </br>
 
 ![drug_network](https://i.imgur.com/TSMWvAu.jpg)</br>
+> Figure 3: Drug Network.Drugs not connected by edges would create useless, if not harmful combinations.The closer this value is to 0, the likelier the chance a useful combo has been found, which will form an edge between these drug nodes.</br>
 
 Drug nodes that are particularly popular with other drugs are colored red, meaning they’ll be crucial to many effective drug combos which can alert manufacturers to prioritize the production of this  specific drug/ingredient.
   
@@ -47,13 +46,13 @@ Alternatively, since drug networks aren’t the first attempt to calculate effec
 
 ![TS_equation1](https://i.imgur.com/QCzFsXv.gif)</br>
 
-ATCk(d) denotes the ATC codes at the Kth level. </br>
+> ATCk(d) denotes the ATC codes at the Kth level. </br>
 This is then used to calculate Therapeutic similarity:
 
 ![TS_equation2](https://i.imgur.com/btjOcUw.gif)</br>
 
-* d1 and d2 are the two drugs represented as nodes to be connected or not</br>
-* n ranges from 1 to 5, representing all possible ATC levels.	</br>
+> * d1 and d2 are the two drugs represented as nodes to be connected or not</br>
+> * n ranges from 1 to 5, representing all possible ATC levels.	</br>
 
 Therapeutic similarity can be understood to be a measure of effectiveness of a drug pair.</br> 
 This value determines the width of the edge connecting the two nodes. No edge means no similarity.</br>
@@ -87,10 +86,8 @@ Another example of genome-wide studies revealing problematic SNPs is a study by 
 
 As previously discussed in regards to the naive approach, testing for drug sensitivity experimentally can be both costly and invasive to patients. However, with the advancement of high throughput sequencing, it has become possible to assess phenotypic reactions to treatment at a lower cost while obtaining more information on a molecular level. This allows researchers to have a better understanding of how gene expression differs between subpopulations who have different sensitivity to a given drug. Thus, RNA-Seq equips researchers to evaluate the complexities of drug responses through transcriptome data of  populations. RNA-seq can better advance pharmacogenomics since it connects drug sensitivity to gene expression which is crucial to the development of  more effective therapies.
 
-Drug sensitivity can be visualized as a histogram. Below, histograms are denoted  as sensitivity value for each 323 cell lines treated with 24 drugs. The sensitivity of the drug was measured by measuring the area under the dose-response curve (denoted as activity area). 
-Each histogram denotes the distribution of sensitivity values of a drug treating on cancer cell lines.</br>
 ![image](srep22811-f1.jpg)</br>
-
+>Figure 4: Drug sensitivity can be visualized as a histogram. Histograms are denoted  as sensitivity value for each 323 cell lines treated with 24 drugs. The sensitivity of the drug was measured by measuring the area under the dose-response curve (denoted as activity area). Each histogram denotes the distribution of sensitivity values of a drug treating on cancer cell lines.
 
  An example of the application of RNA-Seq in better defining the transcriptome differences between populations with diverse phenotypic drug response is seen in a study that has combined drug sensitivity studies and the Cancer Cell Line Encyclopedia (CCLE) to investigate possible causes for adverse drug response across cancer cell types through analysis of differential expression of drug-response associated (DRA) genes. In recent years, studies have focused on the identification of DRA biomarkers due to their association with anti-cancer drug sensitivity and the success of clinical trials which used drugs specifically targeting these genes. The study used data from the CCLE since it provides a valuable resource of gene expression profiles of 20,069 genes for 504 human cancer cell lines. The gene expression levels allowed for the use of a method (defined below) to calculate the drug sensitivity across the genes in all 
 samples. 
@@ -100,32 +97,32 @@ A linear regression model was used in order to inquire which genes are sensitive
 Through this, the sensitivity regression coefficient, γj was calculated across all samples and all genes  </br>
 
 ![equa4](eq4.PNG)</br>
-
-* Yij is the expression level of gene j in sample i </br>
-* Sensitivityi is the drug sensitivity of sample i</br>
-* Agei denotes the age of sample i,</br>
-* Sexi denotes the sex of sample i</br>
-* Batchi denotes the batch information of sample i,</br>
-* Canceri denotes the cancer type of sample i </br>
-* Tissuei denotes the tissue type of sample i </br>
-* Genotypeik denotes the k-th principle component value of the genotype profile for the i-th sample </br>
-* εij is the error term </br>
-* βj is the regression intercept </br>
-* γj is the sensitivity regression coefficient (if γj > 0positively associated and negatively associated if γj < 0) </br>
-* λj is the age regression coefficient</br>
-* μj is the sex regression coefficient</br>
-* θj is the batch regression coefficient</br>
-* κj is the cancer type regression coefficient</br>
-* ϕj is the tissue regression coefficient </br>
-* δk is the regression coefficient for the k-th genotype PC.</br>
-* Sexi, Batchi, Canceri, Tissuei are factor variables.</br>
-
+>Figure 5: Linear Regression Model to calculate sensitivity regression coefficient, γj
+> * Yij is the expression level of gene j in sample i </br>
+> * Sensitivityi is the drug sensitivity of sample i</br>
+> * Agei denotes the age of sample i,</br>
+> * Sexi denotes the sex of sample i</br>
+> * Batchi denotes the batch information of sample i,</br>
+> * Canceri denotes the cancer type of sample i </br>
+> * Tissuei denotes the tissue type of sample i </br>
+> * Genotypeik denotes the k-th principle component value of the genotype profile for the i-th sample </br>
+> * εij is the error term </br>
+> * βj is the regression intercept </br>
+> * γj is the sensitivity regression coefficient (if γj > 0positively associated and negatively associated if γj < 0) </br>
+> * λj is the age regression coefficient</br>
+> * μj is the sex regression coefficient</br>
+> * θj is the batch regression coefficient</br>
+> * κj is the cancer type regression coefficient</br>
+> * ϕj is the tissue regression coefficient </br>
+> * δk is the regression coefficient for the k-th genotype PC.</br>
+> * Sexi, Batchi, Canceri, Tissuei are factor variables.</br>
 
 From the outputted sensitivity coefficients, a permutation test was run 1,000 times to determine if each gene was found significantly sensitive to each drug. A gene was considered significantly sensitive to a drug if the value of its sensitivity coefficient was determined greater than or less than 0 by the permutation test. Further, Benjamini Hochberg method was used to adjust the p-values with a False Discovery Rate (FDR) of less than 0.1. Drugs with 20 or less DRAs identified were not included in the rest of the study leaving 14 drugs after this analysis.
 
 The genes identified as sensitive to a given drug were then separated into genes that were positively regulated (upregulated) in response to the drug, or negatively regulated (downregulated). These expression patterns of the significantly sensitive DRA genes for the drug 17-AAG are visualized using a heatmap of the z-scores of the gene expression across all samples (columns) and genes (rows).
 
 ![lasteq](lastpic.PNG)</br>
+> Figure 6: Heatmap of row Z-scores of gene expression of DRA genes idetified for 17-AAG treated cancer cells across 323 cell lines. Rows indicate genes, columns indicate sample. Red represents high gene expression, blue represents low gene expression. Side bar at top represents sensitivity of the sample to the 17-AAG with dark green for low values and yellow for high values.
 
 As seen above, hierarchical clustering was performed with a Euclidean distance metric on both samples and genes. The clustering reveals that there are 2 main groups of genes based on their expression values: genes with relatively low sensitivity to the drug deemed “non-sensitive group” and genes with relatively high sensitivity to the drug deemed “sensitive group”. The clustering of “non-sensitive” and “sensitive” groups was seen across all 14 drugs. A student t-test was run between these groups across all drugs and all p-values were found to be less than 2.0 × 10^−7.
 
