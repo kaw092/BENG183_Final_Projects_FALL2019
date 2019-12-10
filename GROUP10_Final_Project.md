@@ -5,7 +5,7 @@
 #### 1. [Introduction to Precision Medicine](#1) 
 #### 2. [A Brief History on Pharmacogenetics & Pharmacogenomics.](#2)
 #### 3. [Personalizing drugs through pharmacogenomics.](#3) 
-#### 4. [Applications of Bioinformatic tools:RNASeq](#4) 
+#### 4. [Applications of Bioinformatic tools](#4) 
 #### 5. [References](#6)
 
 
