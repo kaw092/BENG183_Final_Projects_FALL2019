@@ -54,9 +54,9 @@ This is then used to calculate Therapeutic similarity:
 
 > * d1 and d2 are the two drugs represented as nodes to be connected or not</br>
 > * n ranges from 1 to 5, representing all possible ATC levels.	</br>
-
-Therapeutic similarity can be understood to be a measure of effectiveness of a drug pair.</br> 
-This value determines the width of the edge connecting the two nodes. No edge means no similarity.</br>
+</br>
+Therapeutic similarity can be understood to be a measure of effectiveness of a drug pair.This value determines the width of the edge connecting the two nodes. No edge means no similarity.</br>
+</br>
 The two equations and the visual representation of the drug network, a time and labor efficient method of unearthing effective combinations is born. The combinations theorized by drug networks are tested rigorously through clinical trials to determine the validity of the combination.
 
 To name a few that Xu favors, dermatologists confirmed the efficacy of their combination drug named Tri-Luma amongst Asian subjects burdened with Melasma, a pigmentary disorder involving increased melanin.[6] The questionnaires distributed to those consuming the drug combo and the conventional treatment revealed those of the former had much higher satisfaction scores than those of the latter. Similar degrees of success were found in experiments surrounding people with various comorbidities that negate the curative properties of a lone drug, but find themselves outmatched when confronted with a fusion of them. For instance, diabetes may worsen high blood pressure normally present in those with hypertension, but Amiloride and Hydrochlorothiazide mixture helped them both. 
